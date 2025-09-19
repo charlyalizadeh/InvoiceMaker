@@ -4,7 +4,7 @@ Simple tool to make invoice from .ics files.
 
 ## Setup
 
-1. Install the requirements (I use venv but use whatever you want), pandoc will be installed using `pypandoc.download_pandoc`
+* Install the requirements (I use venv but use whatever you want), pandoc will be installed using `pypandoc.download_pandoc`
 
 ```bash
 python -m venv .venv
@@ -66,8 +66,8 @@ invoice:
   end: 2025-10-31T23:59:00
 ```
 
-3. Optionally you can setup your own jinja template, see `/templates/invoice.tex.j2` for the default one
-4. Run the script:
+2. Optionally you can setup your own jinja template, see `/templates/invoice.tex.j2` for the default one
+3. Run the script:
 ```bash
 python src/main.py my_calendar.ics --config my_config.yaml
 # Or with a custom template:
