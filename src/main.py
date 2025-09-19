@@ -63,6 +63,7 @@ def generate_invoice(invoice, contract, company, client, template, services, dat
 def print_event_duration(calendar, start, end):
     events_duration = get_event_duration(calendar, start=start, end=end)
     for event_name, duration in events_duration.items():
+        hours = duration.total_seconds() / 3600
         print(f"{event_name}: {duration}h")
 
 def render_invoice_docx(config, template):
