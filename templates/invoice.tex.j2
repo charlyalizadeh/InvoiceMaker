@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+
+\geometry{top=1in, bottom=1in, left=1in, right=1in}
+
+
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\title{Facture {{invoice['id']}}}
+
+\vspace{1cm}
+
+\textbf{Contrat} {{contract['id']}} \\
+\textbf{Date:} {{date}}
+
+\begin{tabular}{|l|l|l|}
+ & \textbf{\'Emetteur} & \textbf{Client}\\
+Nom & {{company.name}} & {{client.name}} \\
+Adresse & {{company.address}} & {{client.address}} \\
+Email &  {{company.mail}} &   \\
+SIREN & {{company.siren}} & {{client.siren}} \\
+CODE APE & {{company.ape_code}} &
+\end{tabular}
+
+
+\vspace{0.5cm}
+
+\begin{tabular}{|p{8cm}|c|c|c|}
+\textbf{Description} & \textbf{Prix unitaire} & \textbf{Quantit\'e} (du {{invoice['start'].strftime("%d/%m/%Y")}} au {{invoice['end'].strftime("%d/%m/%Y")}}) & \textbf{Total} \\
+\hline
+{% for service in services %}
+    {{service.name}} & {{service.price}}EUR & {{service.quantity}} & {{service.total}}EUR \\
+{% endfor %}
+\multicolumn{3}{|l|}{\textbf{MONTANT TOTAL}} & \textbf{ {{total}} } \\
+\end{tabular}
+TVA non applicable, article 293 B du Code G\'en\'eral des Imp\^ots
+
+\vspace{1cm}
+\end{document}

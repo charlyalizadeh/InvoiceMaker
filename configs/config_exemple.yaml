@@ -1,0 +1,24 @@
+company:
+  name: "Company"
+  owner: "Company owner"
+  address: "Company address"
+  mail: "company@exemple.com"
+  siren: "XXX XXX XXX"
+  ape_code: "XX.XX"
+client:
+  name: "Client"
+  address: "Client address"
+  siren: "XXX XXX XX"
+contract:
+  id: "Contract id"
+service:
+  -
+    name: "Service 1"
+    price: 50.5
+  -
+    name: "Service 2"
+    price: 40.2
+invoice:
+  id: "Invoice id"
+  start: 2025-09-01T00:00:00
+  end: 2025-10-31T23:59:00
