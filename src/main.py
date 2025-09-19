@@ -41,7 +41,7 @@ def generate_services(calendar, start, end, services_price, by='TITLE'):
             "name": event_name,
             "quantity": duration_hour,
             "price": service_price,
-            "total": service_price * duration_hour
+            "total": service_total
         })
     return services
 
