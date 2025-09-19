@@ -20,7 +20,7 @@ def get_event_duration(calendar, start=None, end=None, by='TITLE'):
             continue
         if dt_start < start:
             dt_start = start
-        if dt_end > dt_end:
+        if dt_end > end:
             dt_end = end
         if event[by] not in events_duration.keys():
             events_duration[event[by]] = event["DTEND"].dt - event["DTSTART"].dt
