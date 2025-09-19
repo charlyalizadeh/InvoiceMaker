@@ -7,6 +7,7 @@ import calendar as cl
 import pypandoc
 import yaml
 import warnings
+from pathlib import Path
 
 
 def get_event_duration(calendar, start=None, end=None, by='TITLE'):
